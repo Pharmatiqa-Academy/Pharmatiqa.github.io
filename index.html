@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أكاديمية PHARMATIQA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-green: #116d42; 
+            --dark-green: #0b452b;
+            --primary-gold: #c29b38; 
+            --bg-body: #f4f6f8; 
+            --card-bg: #ffffff;
+            --text-dark: #1a1a1a;
+            --text-light: #5a6268;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        /* شريط التصفح */
+        header {
+            background-color: var(--card-bg);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-top: 4px solid var(--primary-green);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-container img {
+            height: 45px;
+            width: 45px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary-gold);
+            background-color: #fff;
+            font-size: 10px;
+            color: transparent;
+        }
+
+        .logo-text {
+            color: var(--primary-green);
+            font-weight: 900;
+            font-size: 22px;
+            letter-spacing: 0.5px;
+        }
+
+        select {
+            padding: 6px 10px;
+            border: 1px solid var(--primary-green);
+            border-radius: 8px;
+            background-color: var(--card-bg);
+            color: var(--primary-green);
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            outline: none;
+            transition: all 0.2s;
+        }
+
+        select:hover {
+            background-color: #f0fdf4;
+        }
+
+        /* القسم الرئيسي بخلفية الصورة الفخمة وتأثير Parallax */
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            /* دمج لون داكن شفاف فوق الصورة لجعل النص مقروءاً */
+            background-image: linear-gradient(rgba(11, 69, 43, 0.85), rgba(0, 0, 0, 0.8)), url('1000012966.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* تأثير العمق أثناء التمرير */
+            border-bottom: 5px solid var(--primary-gold);
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            color: var(--primary-gold); /* تغيير اللون للذهبي ليلمع فوق الخلفية الداكنة */
+            margin-bottom: 15px;
+            font-weight: 900;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #ffffff; /* أبيض ناصع للقراءة السهلة */
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+            text-shadow: 0 1px 5px rgba(0,0,0,0.5);
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 15px 45px;
+            background: linear-gradient(135deg, var(--primary-gold) 0%, #a8842c 100%); /* زر ذهبي ليتناسق مع العنوان */
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 700;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 2px solid transparent;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.6);
+            border: 2px solid #fff;
+        }
+
+        /* قسم الفيديو */
+        .video-section {
+            padding: 60px 20px;
+        }
+
+        .video-container {
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            border: 3px solid var(--primary-green);
+            background: #000;
+        }
+
+        .video-container iframe {
+            width: 100%;
+            aspect-ratio: 16/9;
+            height: auto;
+            border: none;
+            display: block;
+        }
+
+        /* قسم المميزات */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 0 20px 60px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: 30px 20px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            border-top: 4px solid var(--primary-green);
+            transition: transform 0.3s;
+        }
+
+        .feature-card h3 {
+            color: var(--primary-green);
+            margin-bottom: 12px;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 480px) {
+            header { padding: 12px 15px; }
+            .logo-text { font-size: 18px; }
+            .logo-container img { height: 35px; width: 35px; }
+            .hero { padding: 80px 15px; }
+            .hero h1 { font-size: 32px; }
+            .hero p { font-size: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="1000012974.webp" alt="Logo">
+            <span class="logo-text">PHARMATIQA</span>
+        </div>
+        <select id="language-selector" onchange="changeLanguage()">
+            <option value="ar">العربية</option>
+            <option value="fr">Français</option>
+            <option value="en">English</option>
+        </select>
+    </header>
+
+    <!-- القسم الرئيسي مع صورة الخلفية الفخمة -->
+    <section class="hero">
+        <h1 id="hero-title">أكاديمية PHARMATIQA</h1>
+        <p id="hero-slogan">الوجهة الأولى لطلاب الصيدلة في الجزائر للتفوق الأكاديمي والتحضير الذكي للامتحانات.</p>
+        <a href="#" class="cta-btn" id="hero-cta">انضم إلى مجتمع الصيدلة الآن</a>
+    </section>
+
+    <section class="video-section">
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="feature-card">
+            <h3 id="feat1-title">مراجعات نهائية دقيقة</h3>
+            <p id="feat1-desc">تغطية مبسطة وشاملة لأهم مقاييس التخصص، مع التركيز على تبسيط المواد الدسمة مثل علم الأحياء الدموية والكيمياء الحيوية.</p>
+        </div>
+        <div class="feature-card">
+            <h3 id="feat2-title">أدوات دراسية ذكية</h3>
+            <p id="feat2-desc">الاستعانة بملخصات، بطاقات استذكار، ومسابقات (MCQs) مصممة خصيصاً لترسيخ المعلومات الدوائية والعلمية بسرعة.</p>
+        </div>
+        <div class="feature-card">
+            <h3 id="feat3-title">مجموعات تفاعلية مغلقة</h3>
+            <p id="feat3-desc">بيئة دراسية مخصصة لطلبة الصيدلة، تضمن لك الوصول المباشر للملفات والمناقشات العلمية التي تحتاجها للتحضير الفعال.</p>
+        </div>
+    </section>
+
+    <script>
+        const translations = {
+            ar: {
+                direction: "rtl",
+                title: "أكاديمية PHARMATIQA",
+                slogan: "الوجهة الأولى لطلاب الصيدلة في الجزائر للتفوق الأكاديمي والتحضير الذكي للامتحانات.",
+                cta: "انضم إلى مجتمع الصيدلة الآن",
+                f1Title: "مراجعات نهائية دقيقة",
+                f1Desc: "تغطية مبسطة وشاملة لأهم مقاييس التخصص، مع التركيز على تبسيط المواد الدسمة مثل علم الأحياء الدموية والكيمياء الحيوية.",
+                f2Title: "أدوات دراسية ذكية",
+                f2Desc: "الاستعانة بملخصات، بطاقات استذكار، ومسابقات (MCQs) مصممة خصيصاً لترسيخ المعلومات الدوائية والعلمية بسرعة.",
+                f3Title: "مجموعات تفاعلية مغلقة",
+                f3Desc: "بيئة دراسية مخصصة لطلبة الصيدلة، تضمن لك الوصول المباشر للملفات والمناقشات العلمية التي تحتاجها للتحضير الفعال."
+            },
+            fr: {
+                direction: "ltr",
+                title: "Académie PHARMATIQA",
+                slogan: "La première destination pour les étudiants en pharmacie en Algérie pour l'excellence académique.",
+                cta: "Rejoignez la communauté",
+                f1Title: "Révisions finales précises",
+                f1Desc: "Couverture simplifiée et complète des modules clés, avec un focus sur l'Hémobiologie et la Biochimie.",
+                f2Title: "Outils d'étude intelligents",
+                f2Desc: "Résumés, flashcards et QCM spécialement conçus pour consolider rapidement les informations.",
+                f3Title: "Groupes interactifs",
+                f3Desc: "Un environnement d'étude dédié assurant un accès direct aux fichiers et aux discussions."
+            },
+            en: {
+                direction: "ltr",
+                title: "PHARMATIQA Academy",
+                slogan: "The premier destination for pharmacy students in Algeria for academic excellence.",
+                cta: "Join the Community",
+                f1Title: "Precise Final Reviews",
+                f1Desc: "Simplified coverage of key modules, focusing on Hemobiology and Biochemistry.",
+                f2Title: "Smart Study Tools",
+                f2Desc: "Summaries, flashcards, and MCQs designed to rapidly consolidate knowledge.",
+                f3Title: "Interactive Groups",
+                f3Desc: "A dedicated study environment ensuring direct access to scientific discussions."
+            }
+        };
+
+        function changeLanguage() {
+            const lang = document.getElementById("language-selector").value;
+            const data = translations[lang];
+            
+            document.documentElement.setAttribute("dir", data.direction);
+            document.documentElement.setAttribute("lang", lang);
+            
+            document.getElementById("hero-title").innerText = data.title;
+            document.getElementById("hero-slogan").innerText = data.slogan;
+            document.getElementById("hero-cta").innerText = data.cta;
+            document.getElementById("feat1-title").innerText = data.f1Title;
+            document.getElementById("feat1-desc").innerText = data.f1Desc;
+            document.getElementById("feat2-title").innerText = data.f2Title;
+            document.getElementById("feat2-desc").innerText = data.f2Desc;
+            document.getElementById("feat3-title").innerText = data.f3Title;
+            document.getElementById("feat3-desc").innerText = data.f3Desc;
+            document.title = data.title;
+        }
+    </script>
+</body>
+</html>
